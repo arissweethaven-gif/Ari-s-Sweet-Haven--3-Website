@@ -54,7 +54,7 @@ a {
 }
 
 .container {
-  width: min(1100px, 92%);
+  width: min(950px, 92%);
   margin: 0 auto;
 }
 
@@ -182,7 +182,7 @@ a {
 }
 
 .cookie-card {
-  width: calc((100% - 3rem) / 3);
+  width: 290px;
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: 22px;
