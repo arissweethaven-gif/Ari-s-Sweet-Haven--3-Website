@@ -27,12 +27,20 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+body.short-page {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-main {
+body.short-page main {
   flex: 1;
+}
+
+body.short-page .site-footer {
+  margin-top: auto;
 }
 
 img {
@@ -417,23 +425,4 @@ a {
   .hero {
     padding-top: 4.5rem;
   }
-}
-html,
-body {
-  height: 100%;
-  min-height: 100%;
-}
-
-body {
-  min-height: 100vh;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-main {
-  flex: 1 0 auto !important;
-}
-
-.site-footer {
-  margin-top: auto !important;
 }
