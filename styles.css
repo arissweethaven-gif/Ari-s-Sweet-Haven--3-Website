@@ -173,13 +173,15 @@ a {
   margin-bottom: 2rem;
 }
 
+/* Flavor card layout */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
 }
 
 .cookie-card {
+  grid-column: span 2;
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -188,12 +190,23 @@ a {
   text-align: center;
 }
 
+/* This centers the last two cookie cards when there are 5 flavors */
+.cookie-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.cookie-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
 .cookie-image {
+  width: 100%;
   height: 220px;
   border-radius: 18px;
   margin-bottom: 1rem;
   display: grid;
   place-items: center;
+  object-fit: cover;
   font-weight: 700;
   color: var(--text);
 }
@@ -397,7 +410,13 @@ a {
 
 @media (max-width: 900px) {
   .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cookie-card,
+  .cookie-card:nth-child(4),
+  .cookie-card:nth-child(5) {
+    grid-column: auto;
   }
 
   .shop-grid {
