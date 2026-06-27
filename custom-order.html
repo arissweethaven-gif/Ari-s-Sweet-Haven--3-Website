@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Order | Ari's Sweet Haven</title>
+  <link rel="stylesheet" href="./styles.css?v=10" />
+  <style>
+    .order-wrap {
+      max-width: 680px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
+    }
+    .order-wrap h1 {
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: .4rem;
+    }
+    .order-intro {
+      text-align: center;
+      color: var(--text-soft);
+      margin-bottom: 2rem;
+      font-size: .97rem;
+    }
+    .form-section-label {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      color: var(--text-soft);
+      font-family: Georgia, serif;
+      margin: 0 0 .9rem;
+    }
+    .form-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block;
+      font-size: .88rem;
+      font-weight: 700;
+      margin-bottom: .35rem;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .7rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: .95rem;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--white);
+      color: var(--text);
+      transition: border-color .15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--button);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+    .info-box {
+      background: #fdf8f3;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .info-box p { margin: 0; font-size: .88rem; color: var(--text-soft); line-height: 1.7; }
+    .info-box strong { color: var(--text); }
+    .perks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 520px) { .perks-grid { grid-template-columns: 1fr; } }
+    .perk-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .perk-card .perk-emoji { font-size: 1.4rem; margin-bottom: .3rem; }
+    .perk-card .perk-title { font-size: .88rem; font-weight: 700; color: var(--text); }
+    .perk-card .perk-desc { font-size: .82rem; color: var(--text-soft); margin-top: .2rem; line-height: 1.5; }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: .9rem 1.4rem;
+      background: var(--button);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: Georgia, serif;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .submit-btn:hover { background: var(--button-hover); }
+    .form-note {
+      font-size: .8rem;
+      color: var(--text-soft);
+      text-align: center;
+      margin-top: .7rem;
+    }
+  </style>
+</head>
+<body class="short-page">
+ 
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">Ari's Sweet Haven</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="mission.html">Mission</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="custom-order.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+ 
+<main>
+  <div class="order-wrap">
+    <h1>Custom Order 🎉</h1>
+    <p class="order-intro">24+ cookies · Bulk pricing · 2.5 oz cookie option</p>
+ 
+    <!-- Perks -->
+    <div class="perks-grid">
+      <div class="perk-card">
+        <div class="perk-emoji">📦</div>
+        <div class="perk-title">Bulk Pricing</div>
+        <div class="perk-desc">The more you order, the cheaper it gets per cookie.</div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-emoji">🍪</div>
+        <div class="perk-title">2.5 oz Cookies</div>
+        <div class="perk-desc">Smaller cookies available exclusively for custom orders — perfect for events and variety.</div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-emoji">🎂</div>
+        <div class="perk-title">Any Occasion</div>
+        <div class="perk-desc">Birthdays, events, gifts, or just a big treat — we'll make it work.</div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-emoji">💌</div>
+        <div class="perk-title">Personal Quote</div>
+        <div class="perk-desc">We'll email you a custom price within 24 hours of your request.</div>
+      </div>
+    </div>
+ 
+    <div class="info-box">
+      <p>Fill out the form below and we'll get back to you within <strong>24 hours</strong> with a custom quote including shipping. Payment via <strong>Zelle</strong> or <strong>PayPal</strong>.</p>
+    </div>
+ 
+    <form name="custom-order" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" id="customForm">
+      <input type="hidden" name="form-name" value="custom-order" />
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+ 
+      <!-- Contact Info -->
+      <p class="form-section-label">Your Info</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Jane" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number <span style="font-weight:400; color:var(--text-soft);">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+      </div>
+ 
+      <hr class="form-divider" />
+ 
+      <!-- Order Details -->
+      <p class="form-section-label">Order Details</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cookie-count">Number of cookies needed</label>
+          <input type="number" id="cookie-count" name="cookie-count" placeholder="e.g. 48" min="24" required />
+        </div>
+        <div class="form-group">
+          <label for="cookie-size">Cookie size preference</label>
+          <select id="cookie-size" name="cookie-size" required>
+            <option value="">Select...</option>
+            <option value="Regular (standard size)">Regular (standard size)</option>
+            <option value="Small (2.5 oz)">Small (2.5 oz)</option>
+            <option value="Mix of both">Mix of both</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="flavors">Flavor preferences</label>
+        <textarea id="flavors" name="flavors" placeholder="e.g. half S'mores, half Biscoff, some Nutella..."></textarea>
+      </div>
+ 
+      <hr class="form-divider" />
+ 
+      <!-- Event Info -->
+      <p class="form-section-label">Event Info</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="event-date">Date needed by</label>
+          <input type="date" id="event-date" name="event-date" required />
+        </div>
+        <div class="form-group">
+          <label for="occasion">Occasion <span style="font-weight:400; color:var(--text-soft);">(optional)</span></label>
+          <select id="occasion" name="occasion">
+            <option value="">Select...</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Corporate event">Corporate event</option>
+            <option value="Holiday">Holiday</option>
+            <option value="Gift">Gift</option>
+            <option value="Just because">Just because</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+ 
+      <hr class="form-divider" />
+ 
+      <!-- Delivery -->
+      <p class="form-section-label">Delivery Method</p>
+      <div class="form-group">
+        <label for="delivery-method">How would you like to receive your order?</label>
+        <select id="delivery-method" name="delivery-method" required>
+          <option value="">Select an option...</option>
+          <option value="Local Delivery">Local Delivery</option>
+          <option value="Shipping">Shipping</option>
+        </select>
+      </div>
+      <div class="form-group" id="address-group" style="display:none;">
+        <label for="address">Delivery / Shipping Address</label>
+        <input type="text" id="address" name="address" placeholder="123 Main St, City, State, ZIP" />
+      </div>
+ 
+      <hr class="form-divider" />
+ 
+      <!-- Extra Notes -->
+      <p class="form-section-label">Anything else?</p>
+      <div class="form-group">
+        <label for="notes">Allergies, special requests, or other details</label>
+        <textarea id="notes" name="notes" placeholder="e.g. nut-free, individually wrapped, specific packaging..."></textarea>
+      </div>
+ 
+      <div style="background:#fdf8f3; border:1px solid var(--border); border-radius:16px; padding:1.2rem 1.4rem; margin-bottom:1.2rem;">
+        <p style="margin:0 0 .5rem; font-weight:700; font-size:.95rem; color:var(--text);">What happens next 🍪</p>
+        <p style="margin:0; font-size:.88rem; color:var(--text-soft); line-height:1.7;">
+          After submitting, we'll review your request and email you within <strong>24 hours</strong> with a custom quote including shipping. Once you approve and pay via <strong>Zelle</strong> or <strong>PayPal</strong>, we'll get baking!
+        </p>
+      </div>
+ 
+      <button type="submit" class="submit-btn">Send My Request →</button>
+      <p class="form-note">Questions? Email us at <a href="mailto:arissweethaven@gmail.com" style="color:var(--button);">arissweethaven@gmail.com</a></p>
+    </form>
+  </div>
+</main>
+ 
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p>© 2026 Ari's Sweet Haven</p>
+  </div>
+</footer>
+ 
+<script>
+  document.getElementById('delivery-method').addEventListener('change', function() {
+    const grp = document.getElementById('address-group');
+    const inp = document.getElementById('address');
+    if (this.value) { grp.style.display = 'block'; inp.required = true; }
+    else { grp.style.display = 'none'; inp.required = false; }
+  });
+</script>
+</body>
+</html>
+ 
