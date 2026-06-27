@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -253,7 +253,7 @@
     <h1>Place an Order 🍪</h1>
     <p class="order-intro">Fresh-baked to order · Delivery &amp; Shipping available</p>
 
-    <form name="cookie-order" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" id="orderForm">
+    <form name="cookie-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="orderForm">
       <!-- Hidden fields Netlify will capture -->
       <input type="hidden" name="form-name" value="cookie-order" />
       <input type="hidden" name="box-size"         id="h-box-size" />
@@ -279,7 +279,7 @@
         <input type="email" id="email" name="email" placeholder="you@email.com" required />
       </div>
       <div class="form-group">
-        <label for="phone">Phone Number <span style="font-weight:400; color:var(--text-soft);"></span></label>
+        <label for="phone">Phone Number <span style="font-weight:400; color:var(--text-soft);">(optional)</span></label>
         <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
       </div>
 
@@ -322,6 +322,17 @@
         </div>
       </div>
       <p class="err" id="box-err">Please select a box size before choosing flavors.</p>
+
+      <div class="form-group" style="margin-top:1rem;">
+        <label for="box-qty">How many boxes?</label>
+        <select id="box-qty" name="box-quantity" onchange="updateSummary()">
+          <option value="1">1 box</option>
+          <option value="2">2 boxes</option>
+          <option value="3">3 boxes</option>
+          <option value="4">4 boxes</option>
+          <option value="5">5 boxes</option>
+        </select>
+      </div>
 
       <hr class="form-divider" />
 
@@ -453,9 +464,11 @@
     });
     if (!hasItems) html += `<div class="s-row" style="font-style:italic;"><span>No flavors yet</span></div>`;
     lines.innerHTML = html;
-    document.getElementById('summary-total').textContent = '$' + parseFloat(box.price).toFixed(2);
-    document.getElementById('h-total').value = '$' + parseFloat(box.price).toFixed(2);
-    document.getElementById('h-selection').value = FLAVORS.filter(f=>qty[f.id]>0).map(f=>`${f.name} x${qty[f.id]}`).join(', ') || 'None';
+    const numBoxes = parseInt(document.getElementById('box-qty').value) || 1;
+    const grandTotal = (parseFloat(box.price) * numBoxes).toFixed(2);
+    document.getElementById('summary-total').textContent = numBoxes > 1 ? `$${grandTotal} (${numBoxes} × $${parseFloat(box.price).toFixed(2)})` : `$${grandTotal}`;
+    document.getElementById('h-total').value = '$' + grandTotal;
+    document.getElementById('h-selection').value = (FLAVORS.filter(f=>qty[f.id]>0).map(f=>`${f.name} x${qty[f.id]}`).join(', ') || 'None') + ` | ${numBoxes} box(es)`;
   }
 
   // Show address field when delivery method chosen
